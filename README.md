@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # 🎮 GamerVerse - Portal Gaming Profesional AMPLIADO
 
 ## 📋 Descripción General
@@ -397,3 +398,6 @@ Con:
 
 **GamerVerse v2.0 | Diciembre 2024**  
 *Tu plataforma definitiva para gaming y hardware*
+=======
+# game-pc-builder
+>>>>>>> 9a5bf66989ecc5ed5d03dacc8521f07bd33219b8
