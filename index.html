@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="El Universo Gamer Definitivo - Portal profesional para gamers, hardware gaming y competición">
+    <meta name="keywords" content="gaming, hardware, PC gamer, comparador, videojuegos, eSports">
+    <title>GamerVerse | El Universo Gamer Definitivo</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navegación Principal -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="navbar-brand">
+                <h1><i class="fas fa-gamepad"></i> GamerVerse</h1>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#hero" class="nav-link active">Inicio</a></li>
+                <li><a href="#noticias" class="nav-link">Noticias</a></li>
+                <li><a href="#juegos" class="nav-link">Juegos</a></li>
+                <li><a href="#hardware" class="nav-link">Comparador</a></li>
+                <li><a href="#pcbuilder" class="nav-link">PC Builder</a></li>
+                <li><a href="#builds" class="nav-link">Builds</a></li>
+                <li><a href="#comunidad" class="nav-link">Comunidad</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- SECCIÓN HERO -->
+    <section id="hero" class="hero">
+        <div class="hero-background">
+            <canvas id="heroCanvas"></canvas>
+        </div>
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1 class="hero-title">El Universo Gamer Definitivo</h1>
+                <p class="hero-subtitle">Explora, compara y domina el mundo de los videojuegos y hardware gaming de siguiente generación</p>
+                <div class="hero-buttons">
+                    <button class="btn btn-primary" onclick="document.getElementById('juegos').scrollIntoView({behavior: 'smooth'})">
+                        <span>Explorar Juegos</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </button>
+                    <button class="btn btn-secondary" onclick="document.getElementById('hardware').scrollIntoView({behavior: 'smooth'})">
+                        <span>Comparar Componentes</span>
+                        <i class="fas fa-microchip"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <span>Desplázate para explorar</span>
+            <i class="fas fa-chevron-down"></i>
+        </div>
+    </section>
+
+    <!-- SECCIÓN DE NOTICIAS GAMER -->
+    <section id="noticias" class="news-section">
+        <div class="container">
+            <h2 class="section-title">
+                <span class="title-icon">📰</span>
+                Noticias Gamer
+            </h2>
+            <div class="news-filters">
+                <button class="filter-btn active" data-filter="all">Todas</button>
+                <button class="filter-btn" data-filter="pc">PC</button>
+                <button class="filter-btn" data-filter="consolas">Consolas</button>
+                <button class="filter-btn" data-filter="mobile">Mobile</button>
+                <button class="filter-btn" data-filter="esports">eSports</button>
+            </div>
+            <div class="news-grid">
+                <!-- Las noticias se generarán dinámicamente con JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- CATÁLOGO DE VIDEOJUEGOS -->
+    <section id="juegos" class="games-section">
+        <div class="container">
+            <h2 class="section-title">
+                <span class="title-icon">🎮</span>
+                Catálogo de Videojuegos
+            </h2>
+            <div class="games-controls">
+                <input type="text" id="searchGames" class="search-input" placeholder="Buscar juego...">
+                <div class="filters-group">
+                    <select id="platformFilter" class="select-filter">
+                        <option value="">Plataforma</option>
+                        <option value="pc">PC</option>
+                        <option value="ps5">PS5</option>
+                        <option value="xbox">Xbox Series X/S</option>
+                        <option value="switch">Nintendo Switch</option>
+                    </select>
+                    <select id="genreFilter" class="select-filter">
+                        <option value="">Género</option>
+                        <option value="fps">FPS</option>
+                        <option value="rpg">RPG</option>
+                        <option value="strategy">Estrategia</option>
+                        <option value="action">Acción</option>
+                        <option value="adventure">Aventura</option>
+                        <option value="sports">Deportes</option>
+                        <option value="puzzle">Puzzle</option>
+                        <option value="horror">Horror</option>
+                    </select>
+                    <select id="modeFilter" class="select-filter">
+                        <option value="">Modo de Juego</option>
+                        <option value="single">Single Player</option>
+                        <option value="multi">Multijugador</option>
+                        <option value="coop">Cooperativo</option>
+                    </select>
+                    <select id="typeFilter" class="select-filter">
+                        <option value="">Tipo</option>
+                        <option value="aaa">AAA</option>
+                        <option value="indie">Indie</option>
+                        <option value="esports">eSports</option>
+                    </select>
+                    <select id="fpsFilter" class="select-filter">
+                        <option value="">FPS Requeridos</option>
+                        <option value="low">Baja (60 FPS)</option>
+                        <option value="mid">Media (144 FPS)</option>
+                        <option value="high">Alta (240+ FPS)</option>
+                    </select>
+                    <select id="yearFilter" class="select-filter">
+                        <option value="">Año</option>
+                        <option value="2024">2024</option>
+                        <option value="2023">2023</option>
+                        <option value="2022">2022</option>
+                        <option value="2021">2021</option>
+                        <option value="2020">2020</option>
+                    </select>
+                </div>
+            </div>
+            <div class="games-grid">
+                <!-- Los juegos se generarán dinámicamente con JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- COMPARADOR DE HARDWARE MEJORADO -->
+    <section id="hardware" class="hardware-section">
+        <div class="container">
+            <h2 class="section-title">
+                <span class="title-icon">⚙️</span>
+                Comparador de Hardware Gaming
+            </h2>
+            
+            <div class="comparator-wrapper">
+                <div class="comparator-controls">
+                    <h3>Selecciona una categoría de componentes</h3>
+                    <div class="component-types">
+                        <button class="component-btn active" data-type="cpu">CPUs</button>
+                        <button class="component-btn" data-type="gpu">GPUs</button>
+                        <button class="component-btn" data-type="motherboard">Motherboards</button>
+                        <button class="component-btn" data-type="ram">RAM</button>
+                        <button class="component-btn" data-type="storage">Almacenamiento</button>
+                        <button class="component-btn" data-type="psu">Fuentes</button>
+                        <button class="component-btn" data-type="cooling">Refrigeración</button>
+                        <button class="component-btn" data-type="case">Gabinetes</button>
+                        <button class="component-btn" data-type="monitor">Monitores</button>
+                        <button class="component-btn" data-type="peripherals">Periféricos</button>
+                        <button class="component-btn" data-type="console">Consolas</button>
+                    </div>
+                </div>
+
+                <div class="comparator-selectors">
+                    <div class="selector-group">
+                        <label>Componente 1</label>
+                        <select id="component1" class="component-select">
+                            <option value="">Selecciona un componente...</option>
+                        </select>
+                    </div>
+                    <div class="vs-divider">VS</div>
+                    <div class="selector-group">
+                        <label>Componente 2</label>
+                        <select id="component2" class="component-select">
+                            <option value="">Selecciona un componente...</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div id="comparisonTable" class="comparison-table">
+                    <p class="placeholder-text">Selecciona dos componentes para ver la comparación detallada</p>
+                </div>
+
+                <div class="performance-indicators">
+                    <div class="indicator-card">
+                        <h4>Rendimiento Gaming</h4>
+                        <div class="indicator-bars" id="gamingPerformance"></div>
+                    </div>
+                    <div class="indicator-card">
+                        <h4>Consumo Energético</h4>
+                        <div class="indicator-bars" id="powerConsumption"></div>
+                    </div>
+                    <div class="indicator-card">
+                        <h4>Valor/Rendimiento</h4>
+                        <div class="indicator-bars" id="valuePerformance"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PC BUILDER INTERACTIVO -->
+    <section id="pcbuilder" class="pcbuilder-section">
+        <div class="container">
+            <h2 class="section-title">
+                <span class="title-icon">🔧</span>
+                PC Builder - Construye tu PC Ideal
+            </h2>
+            
+            <div class="pcbuilder-wrapper">
+                <div class="pcbuilder-selectors">
+                    <div class="builder-category">
+                        <label><i class="fas fa-microchip"></i> CPU</label>
+                        <select id="builderCPU" class="builder-select" data-category="cpu">
+                            <option value="">Selecciona CPU...</option>
+                        </select>
+                    </div>
+                    
+                    <div class="builder-category">
+                        <label><i class="fas fa-square"></i> Motherboard</label>
+                        <select id="builderMotherboard" class="builder-select" data-category="motherboard">
+                            <option value="">Selecciona Motherboard...</option>
+                        </select>
+                    </div>
+                    
+                    <div class="builder-category">
+                        <label><i class="fas fa-video"></i> GPU</label>
+                        <select id="builderGPU" class="builder-select" data-category="gpu">
+                            <option value="">Selecciona GPU...</option>
+                        </select>
+                    </div>
+                    
+                    <div class="builder-category">
+                        <label><i class="fas fa-memory"></i> RAM</label>
+                        <select id="builderRAM" class="builder-select" data-category="ram">
+                            <option value="">Selecciona RAM...</option>
+                        </select>
+                    </div>
+                    
+                    <div class="builder-category">
+                        <label><i class="fas fa-hdd"></i> Almacenamiento</label>
+                        <select id="builderStorage" class="builder-select" data-category="storage">
+                            <option value="">Selecciona Almacenamiento...</option>
+                        </select>
+                    </div>
+                    
+                    <div class="builder-category">
+                        <label><i class="fas fa-plug"></i> Fuente</label>
+                        <select id="builderPSU" class="builder-select" data-category="psu">
+                            <option value="">Selecciona Fuente...</option>
+                        </select>
+                    </div>
+                    
+                    <div class="builder-category">
+                        <label><i class="fas fa-fan"></i> Refrigeración</label>
+                        <select id="builderCooling" class="builder-select" data-category="cooling">
+                            <option value="">Selecciona Refrigeración...</option>
+                        </select>
+                    </div>
+                    
+                    <div class="builder-category">
+                        <label><i class="fas fa-box"></i> Gabinete</label>
+                        <select id="builderCase" class="builder-select" data-category="case">
+                            <option value="">Selecciona Gabinete...</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="pcbuilder-summary">
+                    <div class="build-summary-header">
+                        <h3>Resumen de tu Build</h3>
+                        <span id="buildTier" class="build-tier-badge">Sin configuración</span>
+                    </div>
+
+                    <div id="buildSummaryContent" class="build-summary-content">
+                        <p class="placeholder">Selecciona componentes para ver el resumen...</p>
+                    </div>
+
+                    <div id="buildWarnings" class="build-warnings" aria-live="polite" style="margin-top:12px; color: #ffcc00;"></div>
+
+                    <div class="build-price-section">
+                        <div class="price-item">
+                            <span>Precio Total:</span>
+                            <span id="totalPrice" class="total-price">$0</span>
+                        </div>
+                        <div class="price-item">
+                            <span>Consumo TDP:</span>
+                            <span id="totalTDP" class="total-tdp">0W</span>
+                        </div>
+                        <div class="price-item">
+                            <span>Rendimiento Gaming:</span>
+                            <span id="buildScore" class="build-score">0%</span>
+                        </div>
+                    </div>
+
+                    <div class="build-fps-section">
+                        <h4>FPS Estimados</h4>
+                        <div id="buildFPS" class="build-fps-grid">
+                            <p>Cargando estimaciones...</p>
+                        </div>
+                    </div>
+
+                    <div class="build-actions">
+                        <button class="btn btn-primary" id="saveBuildBtn">
+                            <i class="fas fa-save"></i> Guardar Build
+                        </button>
+                        <button class="btn btn-secondary" id="resetBuildBtn">
+                            <i class="fas fa-redo"></i> Limpiar
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN PC IDEAL PARA GAMING -->
+    <section id="builds" class="builds-section">
+        <div class="container">
+            <h2 class="section-title">
+                <span class="title-icon">💻</span>
+                Builds Recomendadas Profesionales
+            </h2>
+            <div class="builds-grid">
+                <!-- Los builds se generarán dinámicamente con JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- SECCIÓN COMUNIDAD -->
+    <section id="comunidad" class="community-section">
+        <div class="container">
+            <h2 class="section-title">
+                <span class="title-icon">👥</span>
+                Comunidad Gamer
+            </h2>
+            
+            <div class="community-content">
+                <div class="reviews-section">
+                    <h3>Opiniones de la Comunidad</h3>
+                    <div class="reviews-container">
+                        <!-- Las opiniones se generarán dinámicamente con JavaScript -->
+                    </div>
+                </div>
+
+                <div class="stats-section">
+                    <h3>Estadísticas de la Comunidad</h3>
+                    <div class="stats-grid">
+                        <div class="stat-card">
+                            <div class="stat-number" data-value="1250000">0</div>
+                            <p>Gamers Activos</p>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-number" data-value="15000">0</div>
+                            <p>Hardware Comparados</p>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-number" data-value="850">0</div>
+                            <p>Juegos en Base Datos</p>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-number" data-value="48000">0</div>
+                            <p>Opiniones de Usuarios</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>GamerVerse</h4>
+                    <p>Tu portal definitivo para el mundo gamer</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Enlaces Rápidos</h4>
+                    <ul>
+                        <li><a href="#hero">Inicio</a></li>
+                        <li><a href="#juegos">Juegos</a></li>
+                        <li><a href="#hardware">Hardware</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Síguenos</h4>
+                    <div class="social-links">
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="Discord"><i class="fab fa-discord"></i></a>
+                        <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                        <a href="#" aria-label="Twitch"><i class="fab fa-twitch"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 GamerVerse. Todos los derechos reservados. | Diseño Premium Gaming</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Modal para detalles de juegos -->
+    <div id="gameModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div id="modalBody"></div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="script.js"></script>
+</body>
+</html>
